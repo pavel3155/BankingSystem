@@ -312,7 +312,7 @@ public class PersCabinet {
         System.out.println("******************************************************************");
     }
     public void AccountTransactions(){
-        Boolean run = true;
+        boolean run = true;
         this.data=getCmd("Введите дату выполняемой операции >:");
         while (run) {
             MenuAccTransactions();//выводим меню доступных операций для клиента

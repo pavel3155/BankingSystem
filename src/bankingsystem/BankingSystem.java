@@ -17,9 +17,8 @@ public class BankingSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        // TODO code application logic here2
         Bank bank = new Bank();
-        Boolean run = true;
+        boolean run = true;
         Scanner sc = new Scanner(System.in);
 
         while (run) {
