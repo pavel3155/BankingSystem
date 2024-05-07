@@ -16,12 +16,10 @@ public class BankingSystem {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    Bank bank = new Bank();
-
+    public static void main(String[] args){
+        // TODO code application logic here2
+        Bank bank = new Bank();
         Boolean run = true;
-
         Scanner sc = new Scanner(System.in);
 
         while (run) {
@@ -34,8 +32,6 @@ public class BankingSystem {
             System.out.println("*****************************");
             System.out.print(">:");
             String cmd = sc.next();
-
-
             switch (cmd) {
                 case "1":
                     RegClentBank reg = new RegClentBank(sc);
@@ -47,11 +43,7 @@ public class BankingSystem {
                 case "0":
                     run = false;
                     break;
-
             }
         }
-
-
     }
-    
 }

@@ -67,7 +67,6 @@ public String GenerateNumAccount(int n){
     @Override
     public void deposit(float sum) {
         this.balance+=sum;
-
     }
 
     @Override

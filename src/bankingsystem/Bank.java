@@ -15,13 +15,11 @@ public class Bank {
     static List <Deposit> depAccounts = new ArrayList<>();
     static List<OperAccount> operations = new ArrayList<>();
 
-    
     public Bank() {
-        InOutFiles.ClientBankInFile();
-        InOutFiles.depAccountsInFile();
-        InOutFiles.operAccountInFile();
+        InOutFiles.loadClientsFromFile();
+        InOutFiles.loadDepositAccountsFromFile();
+        InOutFiles.loadHistoryTransactionsAccountsFromFile();
     }
-
     static  public void clientAdd(Client client){
         Integer key=client.getID();
         Client addClient = clients.putIfAbsent(key,client);
