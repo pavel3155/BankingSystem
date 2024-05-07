@@ -1,12 +1,8 @@
 package bankingsystem;
-import java.io.BufferedOutputStream;
 import java.io.BufferedReader;
-import java.io.FileOutputStream;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
 import static java.lang.System.out;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -15,17 +11,14 @@ import java.util.stream.Collectors;
 public class PersCabinet {
     String log;
     String pass;
-    String readLog="";
-    String readPass="";
     Scanner sc;
     int id;
     String numAcc;
     String data;
 
     public PersCabinet(Scanner sc) {
-
         this.sc = sc;
-        sc.nextLine();
+        //sc.nextLine();
         System.out.println("Вход в личный кабинет:");
         System.out.print("Введите логин >:");
         if (sc.hasNext()) {
@@ -177,7 +170,6 @@ public class PersCabinet {
      *
      */
     public void close_depAccount(String num){
-        String sOper;
         // получаем из списка депозитных счетов, счет-d, который соответствует номеру счета - num,
         // введенного текущим клиентом банка с id
         for (Deposit d : Bank.depAccounts) {
@@ -337,7 +329,7 @@ public class PersCabinet {
     }
 
     public int getIDClient(String num){
-        List<Client> lstClient =Bank.clients.values().stream().filter(e ->num.equals(e.curAccount.numAccount)).collect(Collectors.toList());
+        List<Client> lstClient =Bank.clients.values().stream().filter(e ->num.equals(e.curAccount.numAccount)).toList();
         return lstClient.get(0).getID();
     }
 }
