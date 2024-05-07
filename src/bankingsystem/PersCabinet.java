@@ -63,7 +63,7 @@ public class PersCabinet {
      * в переменную id записывается ID клиента (часть строки с 0 по 4 символ)
      */
     public boolean VerClient(){
-        String client = "";
+        String client;
         try (BufferedReader br = new BufferedReader(new FileReader("ClientsBank.txt"))) {
             while ((client =br.readLine())!=null) {
                     boolean bLog = client.contains(log);//ищем в строке log клиента
@@ -120,7 +120,7 @@ public class PersCabinet {
      * метод выводит информацию по вкладам клинета
      */
     public  void outInf_depAccounts(int id){
-        List<Deposit> cDep = Bank.depAccounts.stream().filter(d -> d.idClient == id).collect(Collectors.toList());
+        List<Deposit> cDep = Bank.depAccounts.stream().filter(d -> d.idClient == id).toList();
         for (Deposit d : cDep) {
             System.out.println("Вклад: " + d.nameDep + "  срок(мес.): " + d.term + "  проценты: " + d.percent + "  сумма вклада: " + d.inSum);
             System.out.println("р/с: " + d.num + " Баланс: " + d.outSum);
@@ -330,6 +330,6 @@ public class PersCabinet {
 
     public int getIDClient(String num){
         List<Client> lstClient =Bank.clients.values().stream().filter(e ->num.equals(e.curAccount.numAccount)).toList();
-        return lstClient.get(0).getID();
+        return lstClient.getFirst().getID();
     }
 }

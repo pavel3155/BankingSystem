@@ -17,7 +17,7 @@ public class BankingSystem {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        Bank bank = new Bank();
+        new Bank();
         boolean run = true;
         Scanner sc = new Scanner(System.in);
 
@@ -33,11 +33,11 @@ public class BankingSystem {
             String cmd = sc.next();
             switch (cmd) {
                 case "1":
-                    RegClentBank reg = new RegClentBank(sc);
+                    new RegClentBank(sc);
                     break;
 
                 case "2":
-                    PersCabinet ver=new PersCabinet(sc);
+                    new PersCabinet(sc);
                     break;
                 case "0":
                     run = false;
